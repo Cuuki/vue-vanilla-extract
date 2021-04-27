@@ -1558,6 +1558,11 @@
     "@babel/template" "^7.12.13"
     find-up "^5.0.0"
 
+"@vanilla-extract/css-utils@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/css-utils/-/css-utils-0.1.0.tgz#1bc2c69aa9791fbcb1432be4dd560d26e292db91"
+  integrity sha512-7ukJueCazh9PQRZXQOO2NrlnUy0DNEoYWEBR5Yeu9KKYY5FRdB1TAIRFhBeFP9Mczl5ApT+tAUKOGBf+XVh/xA==
+
 "@vanilla-extract/css@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/css/-/css-0.3.0.tgz#3458a7ae872b7b52b134036081fdad92a951f0ec"
@@ -1569,6 +1574,13 @@
     cssesc "^3.0.0"
     csstype "^3.0.7"
     dedent "^0.7.0"
+
+"@vanilla-extract/dynamic@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/dynamic/-/dynamic-0.1.0.tgz#588d2f9d31eb85374304250b3196b0e6f0beb59e"
+  integrity sha512-4oBUis7ApD4A1k1VnZGTfpVk7gtUTe38qSD7stmYJK5Si9/x8h8xbTEN48Aoul/lZswBctSc6AieZ8IjrMjrjQ==
+  dependencies:
+    "@vanilla-extract/private" "^0.1.0"
 
 "@vanilla-extract/private@^0.1.0":
   version "0.1.0"

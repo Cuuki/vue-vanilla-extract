@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 :class="[messageStyle, messageSpacingStyle]">{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -109,16 +109,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { headingStyle, linkStyle, listItemStyle, listStyle } from './HelloWorld.css';
+import { computed, defineComponent, PropType } from 'vue';
+import { isSpaceScaleVariant, SpaceScaleVariant } from '@/types/theme';
+import { marginVariants } from '@/styles/theme.css';
+import { headingStyle, linkStyle, listItemStyle, listStyle, messageStyle } from './HelloWorld.css';
 
 export default defineComponent({
   name: 'HelloWorld',
   props: {
-    msg: String,
+    msg: {
+      type: String,
+      required: true,
+    },
+    msgSpacing: {
+      type: String as PropType<SpaceScaleVariant>,
+      default: '3',
+      validator: (spacing) => isSpaceScaleVariant(spacing),
+    },
   },
-  setup() {
+  setup(props: { msg: string; msgSpacing: SpaceScaleVariant }) {
+    const messageSpacingStyle = computed(() => marginVariants[props.msgSpacing] || '3');
+
     return {
+      messageStyle,
+      messageSpacingStyle,
       headingStyle,
       listStyle,
       listItemStyle,

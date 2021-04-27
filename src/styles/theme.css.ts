@@ -1,24 +1,20 @@
 import { createGlobalTheme, styleVariants } from '@vanilla-extract/css';
 
 export const spaceScale = {
-  0: '4px',
-  1: '8px',
-  2: '16px',
-  3: '24px',
-  4: '32px',
-  5: '40px',
-  6: '48px',
-  7: '56px',
-  8: '64px',
+  '0': '4px',
+  '1': '8px',
+  '2': '16px',
+  '3': '24px',
+  '4': '32px',
+  '5': '40px',
+  '6': '48px',
+  '7': '56px',
+  '8': '64px',
 };
 
-export const spaceVariants = (property: string): Record<string, string> =>
-  styleVariants(spaceScale, (space) => ({
-    [property]: space,
-  }));
-
-export const margin = spaceVariants('margin');
-export const padding = spaceVariants('padding');
+export const marginVariants = styleVariants(spaceScale, (space) => ({
+  margin: space,
+}));
 
 export const themeVars = createGlobalTheme(':root', {
   color: {

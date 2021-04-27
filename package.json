@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@vanilla-extract/css": "^0.3.0",
+    "@vanilla-extract/css-utils": "^0.1.0",
+    "@vanilla-extract/dynamic": "^0.1.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
