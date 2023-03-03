@@ -1,4 +1,4 @@
-# vanilla-extract-vue
+# vanilla-extract-vue 
 
 ## Project setup
 ```
