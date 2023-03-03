@@ -2,28 +2,30 @@
 
 ## Project setup
 ```
-yarn install
+pnpm install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+pnpm run dev
 ```
 
 ### Compiles and minifies for production
 ```
-yarn build
+pnpm run build
 ```
 
-### Run your unit tests
+### Run cypress test suite
 ```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
+pnpm run cypress:open
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Lint files
+```
+pnpm run lint
+```
+
+### Format files
+```
+pnpm run format
+```

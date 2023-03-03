@@ -1,143 +1,39 @@
 <template>
-  <div class="hello">
-    <h1 :class="[messageStyle, messageSpacingStyle]">{{ msg }}</h1>
+  <h1>{{ msg }}</h1>
+
+  <div class="card">
+    <BaseButton @click="count++">count is {{ count }}</BaseButton>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener" :class="linkStyle"
-        >vue-cli documentation</a
-      >.
+      Edit
+      <code>components/HelloWorld.vue</code> to test HMR
     </p>
-    <h3 :class="headingStyle">Installed CLI Plugins</h3>
-    <ul :class="listStyle">
-      <li :class="listItemStyle">
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-          :class="linkStyle"
-          >babel</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript"
-          target="_blank"
-          rel="noopener"
-          :class="linkStyle"
-          >typescript</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-          :class="linkStyle"
-          >eslint</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest"
-          target="_blank"
-          rel="noopener"
-          :class="linkStyle"
-          >unit-jest</a
-        >
-      </li>
-    </ul>
-    <h3 :class="headingStyle">Essential Links</h3>
-    <ul :class="listStyle">
-      <li :class="listItemStyle">
-        <a href="https://vuejs.org" target="_blank" rel="noopener" :class="linkStyle">Core Docs</a>
-      </li>
-      <li :class="listItemStyle">
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener" :class="linkStyle"
-          >Forum</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener" :class="linkStyle"
-          >Community Chat</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener" :class="linkStyle"
-          >Twitter</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener" :class="linkStyle">News</a>
-      </li>
-    </ul>
-    <h3 :class="headingStyle">Ecosystem</h3>
-    <ul :class="listStyle">
-      <li :class="listItemStyle">
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener" :class="linkStyle"
-          >vue-router</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener" :class="linkStyle">vuex</a>
-      </li>
-      <li :class="listItemStyle">
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-          :class="linkStyle"
-          >vue-devtools</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener" :class="linkStyle"
-          >vue-loader</a
-        >
-      </li>
-      <li :class="listItemStyle">
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-          rel="noopener"
-          :class="linkStyle"
-          >awesome-vue</a
-        >
-      </li>
-    </ul>
   </div>
+
+  <p>
+    Check out
+    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
+      >create-vue</a
+    >, the official Vue + Vite starter
+  </p>
+  <p>
+    Install
+    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
+    in your IDE for a better DX
+  </p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
-import { isSpaceScaleVariant, SpaceScaleVariant } from '@/types/theme';
-import { marginVariants } from '@/styles/theme.css';
-import { headingStyle, linkStyle, listItemStyle, listStyle, messageStyle } from './HelloWorld.css';
+<script setup lang="ts">
+import { ref } from 'vue';
+import BaseButton from './BaseButton/BaseButton.vue';
 
-export default defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: {
-      type: String,
-      required: true,
-    },
-    msgSpacing: {
-      type: String as PropType<SpaceScaleVariant>,
-      default: '3',
-      validator: (spacing) => isSpaceScaleVariant(spacing),
-    },
-  },
-  setup(props: { msg: string; msgSpacing: SpaceScaleVariant }) {
-    const messageSpacingStyle = computed(() => marginVariants[props.msgSpacing] || '3');
+defineProps<{ msg: string }>();
 
-    return {
-      messageStyle,
-      messageSpacingStyle,
-      headingStyle,
-      listStyle,
-      listItemStyle,
-      linkStyle,
-    };
-  },
-});
+const count = ref(0);
 </script>
+
+<style scoped>
+.read-the-docs {
+  color: #888;
+}
+</style>
