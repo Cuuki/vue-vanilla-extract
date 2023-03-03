@@ -15,6 +15,11 @@ pnpm run dev
 pnpm run build
 ```
 
+### Preview production build
+```
+pnpm run preview
+```
+
 ### Run cypress test suite
 ```
 pnpm run cypress:open
