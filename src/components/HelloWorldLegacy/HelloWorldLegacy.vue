@@ -154,7 +154,7 @@
 import { computed, defineComponent, PropType } from 'vue';
 import type { SpaceScaleVariant } from '../../types/theme';
 import { isSpaceScaleVariant } from '../../utils/theme';
-import { marginVariants } from '../../styles/theme.css';
+import { marginVariants } from '../../styles/variants.css';
 import {
   headingStyle,
   linkStyle,
@@ -171,14 +171,14 @@ export default defineComponent({
       required: true,
     },
     msgSpacing: {
-      type: String as PropType<SpaceScaleVariant>,
-      default: '3',
+      type: Number as PropType<SpaceScaleVariant>,
+      default: 3,
       validator: (spacing) => isSpaceScaleVariant(spacing),
     },
   },
   setup(props: { msg: string; msgSpacing: SpaceScaleVariant }) {
     const messageSpacingStyle = computed(
-      () => marginVariants[props.msgSpacing] || '3'
+      () => marginVariants[props.msgSpacing] || 3
     );
 
     return {
