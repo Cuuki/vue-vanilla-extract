@@ -2,7 +2,7 @@
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <CounterButton v-model="count" />
+    <CounterIncrementButton v-model="count" />
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import CounterButton from './CounterButton/CounterButton.vue';
+import CounterIncrementButton from './CounterIncrementButton/CounterIncrementButton.vue';
 
 defineProps<{ msg: string }>();
 

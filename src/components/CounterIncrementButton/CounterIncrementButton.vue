@@ -1,5 +1,7 @@
 <template>
-  <BaseButton @click="updateModelValue">count is {{ modelValue }}</BaseButton>
+  <BaseButton @click="updateModelValue">
+    <span><slot>count is</slot> {{ modelValue }}</span>
+  </BaseButton>
 </template>
 
 <script setup lang="ts">
