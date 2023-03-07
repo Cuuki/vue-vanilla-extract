@@ -46,6 +46,7 @@ const convertScaleToContractTokens = (scale: Record<number, number>) =>
   );
 
 // Inspiration: https://theme-ui.com/theming
+// @TODO: REM conversion
 export const contractTokens = {
   colors: {
     primary: 'color-primary',
