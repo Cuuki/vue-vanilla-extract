@@ -2,7 +2,7 @@
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <BaseButton @click="count++">count is {{ count }}</BaseButton>
+    <CounterButton v-model="count" />
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import BaseButton from './BaseButton/BaseButton.vue';
+import CounterButton from './CounterButton/CounterButton.vue';
 
 defineProps<{ msg: string }>();
 
