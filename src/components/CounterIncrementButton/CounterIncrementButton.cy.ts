@@ -1,8 +1,10 @@
-import CounterButton from './CounterIncrementButton.vue';
+import CounterIncrementButton from './CounterIncrementButton.vue';
 
 describe('<CounterIncrementButton />', () => {
   it('renders', () => {
-    cy.mount(CounterButton, {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore Mount function is not compatible with vue-tsc
+    cy.mount(CounterIncrementButton, {
       props: {
         modelValue: 0,
       },
