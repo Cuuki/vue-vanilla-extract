@@ -150,10 +150,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
 import type { SpaceScaleVariant } from '../../types/theme';
-import { isSpaceScaleVariant } from '../../utils/theme';
 import { marginVariants } from '../../styles/variants.css';
 import {
   headingStyle,
@@ -163,32 +162,12 @@ import {
   messageStyle,
 } from './HelloWorldLegacy.css';
 
-export default defineComponent({
-  name: 'HelloWorldLegacy',
-  props: {
-    msg: {
-      type: String,
-      required: true,
-    },
-    msgSpacing: {
-      type: Number as PropType<SpaceScaleVariant>,
-      default: 3,
-      validator: (spacing) => isSpaceScaleVariant(spacing),
-    },
-  },
-  setup(props: { msg: string; msgSpacing: SpaceScaleVariant }) {
-    const messageSpacingStyle = computed(
-      () => marginVariants[props.msgSpacing] || 3
-    );
+const props = defineProps<{
+  msg: string;
+  msgSpacing: SpaceScaleVariant;
+}>();
 
-    return {
-      messageStyle,
-      messageSpacingStyle,
-      headingStyle,
-      listStyle,
-      listItemStyle,
-      linkStyle,
-    };
-  },
-});
+const messageSpacingStyle = computed(
+  () => marginVariants[props.msgSpacing] || 3
+);
 </script>

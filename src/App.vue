@@ -8,10 +8,12 @@
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <HelloWorldLegacy msg="Vite + Vue (Legacy)" msg-spacing="8" />
 </template>
 
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld/HelloWorld.vue';
+import HelloWorldLegacy from './components/HelloWorldLegacy/HelloWorldLegacy.vue';
 </script>
 
 <style scoped>

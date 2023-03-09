@@ -1,6 +1,7 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { themeVars } from '../../styles/theme.css';
 
+// @TODO: local style with variants
 globalStyle('button', {
   borderRadius: themeVars.radii['1'],
   border: '1px solid transparent',
