@@ -1,36 +1,38 @@
 import type { RecordAs } from '../types/utility';
 import { createGlobalThemeContract } from '@vanilla-extract/css';
 
+export const REM_BASE_SIZE = 16;
+
 export const spaceScale = {
-  '0': '4px',
-  '1': '8px',
-  '2': '16px',
-  '3': '24px',
-  '4': '32px',
-  '5': '40px',
-  '6': '48px',
-  '7': '56px',
-  '8': '64px',
+  '0': '0.25rem',
+  '1': '0.5rem',
+  '2': '1rem',
+  '3': '1.5rem',
+  '4': '2rem',
+  '5': '2.5rem',
+  '6': '3rem',
+  '7': '3.5rem',
+  '8': '4rem',
 };
 
 export const fontSizeScale = {
-  '0': '14px',
-  '1': '16px',
-  '2': '20px',
-  '3': '24px',
-  '4': '32px',
-  '5': '48px',
+  '0': '0.875rem',
+  '1': '1rem',
+  '2': '1.25rem',
+  '3': '1.5rem',
+  '4': '2rem',
+  '5': '3rem',
 };
 
 export const sizeScale = {
-  '0': '320px',
-  '1': '640px',
-  '2': '1280px',
+  '0': '20ren',
+  '1': '40rem',
+  '2': '80rem',
 };
 
 export const radiusScale = {
-  '0': '4px',
-  '1': '8px',
+  '0': '0.25rem',
+  '1': '0.5rem',
 };
 
 const convertScaleToContractTokens = <T extends Record<string, string>>(
@@ -70,7 +72,7 @@ export const contractTokens = {
   sizes: convertScaleToContractTokens(sizeScale, 'size'),
   radii: convertScaleToContractTokens(radiusScale, 'radius'),
 };
-// @TODO: REM conversion
+
 export const darkThemeTokens: RecordAs<typeof contractTokens, string> = {
   colors: {
     primary: '#35495E',
