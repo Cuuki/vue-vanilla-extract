@@ -1,45 +1,39 @@
 {
-  "name": "vanilla-extract-vue",
-  "version": "0.1.0",
+  "name": "test",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"**/*.{cjs,ts,vue,css,html}\"",
+    "lint": "eslint .",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
-    "@vanilla-extract/css": "^0.3.0",
-    "@vanilla-extract/css-utils": "^0.1.0",
-    "@vanilla-extract/dynamic": "^0.1.0",
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "@vanilla-extract/css": "^1.9.5",
+    "@vanilla-extract/recipes": "^0.3.0",
+    "@vanilla-extract/vite-plugin": "^3.8.0",
+    "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@testing-library/dom": "^7.30.4",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/user-event": "^13.1.5",
-    "@testing-library/vue": "^6.4.0",
-    "@types/jest": "^24.0.19",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vanilla-extract/babel-plugin": "^0.3.1",
-    "@vanilla-extract/webpack-plugin": "^0.2.1",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-unit-jest": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-airbnb": "^5.0.2",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "@vue/test-utils": "^2.0.0-0",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "prettier": "^2.2.1",
-    "typescript": "~4.1.5",
-    "vue-jest": "^5.0.0-0"
-  }
+    "@testing-library/cypress": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "cypress": "^12.7.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-vue": "^9.9.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vue-tsc": "^1.0.24"
+  },
+  "engines": {
+    "node": "18.14"
+  },
+  "packageManager": "pnpm@7.26.3"
 }
