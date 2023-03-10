@@ -28,9 +28,15 @@ jobs:
       - name: Lint
         run: pnpm run lint
 
-      - name: Run Cypress E2E & component tests
+      - name: Run Cypress component tests
         uses: cypress-io/github-action@v5
         with:
+          component: true
+
+      - name: Run Cypress E2E tests
+        uses: cypress-io/github-action@v5
+        with:
+          component: false
           start: pnpm run dev
           wait-on: 'http://0.0.0.0:5173'
 
