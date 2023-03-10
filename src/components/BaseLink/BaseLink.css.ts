@@ -1,12 +1,11 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { themeVars } from '../../styles/theme.css';
 
-// @TODO: local style
-globalStyle('a', {
+export const linkClasses = style({
   fontWeight: themeVars.fontWeights.medium,
   color: themeVars.colors.accent,
   textDecoration: 'inherit',
-});
-globalStyle('a:hover', {
-  color: themeVars.colors.highlight,
+  ':hover': {
+    color: themeVars.colors.highlight,
+  },
 });

@@ -55,6 +55,7 @@ export const contractTokens = {
     background: 'color-background',
     accent: 'color-accent',
     highlight: 'color-highlight',
+    muted: 'color-muted',
   },
   fonts: {
     body: 'font-body',
@@ -80,6 +81,7 @@ export const darkThemeTokens: RecordAs<typeof contractTokens, string> = {
     background: '#242424',
     accent: '#646cff',
     highlight: '#535bf2',
+    muted: '#888888',
   },
   fonts: {
     body: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',

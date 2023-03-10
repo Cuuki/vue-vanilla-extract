@@ -1,11 +1,11 @@
 <template>
-  <a :href="href">
+  <a :href="href" :class="[linkClasses]">
     <slot></slot>
   </a>
 </template>
 
 <script setup lang="ts">
-import './BaseLink.css';
+import { linkClasses } from './BaseLink.css';
 
 interface Props extends Partial<HTMLLinkElement> {
   href: string;

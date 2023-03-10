@@ -1,15 +1,16 @@
 <template>
-  <component :is="`h${level && level <= 6 ? level : 2}`">
+  <component :is="`h${level}`" :class="[headingRecipe({ level })]">
     <slot />
   </component>
 </template>
 
 <script setup lang="ts">
-import './BaseHeading.css';
+import type { BaseHeadingVariants } from './types';
+import { DEFAULT_VARIANT_LEVEL, headingRecipe } from './BaseHeading.css';
 
 interface Props extends Partial<HTMLHeadingElement> {
-  level?: 1 | 2 | 3 | 4 | 5 | 6;
+  level?: BaseHeadingVariants['level'];
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), { level: DEFAULT_VARIANT_LEVEL });
 </script>

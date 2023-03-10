@@ -1,7 +1,10 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { themeVars } from '../../styles/theme.css';
 
-// @TODO: local style
-globalStyle('.card', {
+export const cardClasses = style({
   padding: themeVars.space['4'],
 });
+
+export const readDocsTextClasses = style({
+  color: themeVars.colors.muted
+})

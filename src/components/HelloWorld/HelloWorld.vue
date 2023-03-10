@@ -1,7 +1,9 @@
 <template>
-  <BaseHeading :level="1">{{ msg }}</BaseHeading>
+  <BaseHeading :class="[messageSpacingStyle]" :level="1"
+    >{{ title }}
+  </BaseHeading>
 
-  <div class="card">
+  <div :class="[cardClasses]">
     <CounterIncrementButton v-model="count" />
     <p>
       Edit
@@ -25,23 +27,28 @@
     </BaseLink>
     in your IDE for a better DX
   </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <p :class="[readDocsTextClasses]">
+    Click on the Vite and Vue logos to learn more
+  </p>
 </template>
 
 <script setup lang="ts">
-import './HelloWorld.css';
-import { ref } from 'vue';
+import type { SpaceScaleVariant } from '../../types/theme';
+import { computed, ref } from 'vue';
+import { cardClasses, readDocsTextClasses } from './HelloWorld.css';
+import { mbVariantClasses } from '../../styles/variants.css';
 import CounterIncrementButton from '../CounterIncrementButton/CounterIncrementButton.vue';
 import BaseHeading from '../BaseHeading/BaseHeading.vue';
 import BaseLink from '../BaseLink/BaseLink.vue';
 
-defineProps<{ msg: string }>();
+const props = defineProps<{
+  title: string;
+  titleMb: SpaceScaleVariant;
+}>();
+
+const messageSpacingStyle = computed(
+  () => mbVariantClasses[props.titleMb || '3']
+);
 
 const count = ref(0);
 </script>
-
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>

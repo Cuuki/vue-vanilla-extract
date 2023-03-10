@@ -1,34 +1,20 @@
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
+      <img src="/vite.svg" :class="[logoClasses]" alt="Vite logo" />
     </a>
     <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+      <img
+        src="./assets/vue.svg"
+        :class="[logoClasses, logoVueClasses]"
+        alt="Vue logo"
+      />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
-  <HelloWorldLegacy msg="Vite + Vue (Legacy)" msg-spacing="8" />
+  <HelloWorld title="Vite + Vue" title-mb="4" />
 </template>
 
 <script setup lang="ts">
+import { logoClasses, logoVueClasses } from './App.css';
 import HelloWorld from './components/HelloWorld/HelloWorld.vue';
-import HelloWorldLegacy from './components/HelloWorldLegacy/HelloWorldLegacy.vue';
 </script>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
