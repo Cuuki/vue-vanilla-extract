@@ -13,28 +13,26 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js and caching
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
       - name: Install dependencies
-        run: pnpm install && cypress install
+        run: pnpm install
 
       - name: Lint
         run: pnpm run lint
 
       - name: Run Cypress E2E & component tests
         uses: cypress-io/github-action@v5
-        with:
-          install: false
 
       - name: Build
         run: pnpm run build
