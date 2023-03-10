@@ -1,5 +1,5 @@
 <template>
-  <BaseHeading :class="[messageSpacingStyle]" :level="1"
+  <BaseHeading :class="[messageSpacingStyle]" level="1"
     >{{ title }}
   </BaseHeading>
 
