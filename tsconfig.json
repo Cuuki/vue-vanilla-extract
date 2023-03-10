@@ -18,7 +18,6 @@
     "types": ["cypress", "@testing-library/cypress"]
   },
   "include": [
-    "cypress/**/*.ts",
     "cypress/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",

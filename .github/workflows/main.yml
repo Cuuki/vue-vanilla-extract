@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +31,8 @@ jobs:
       - name: Run Cypress E2E & component tests
         uses: cypress-io/github-action@v5
         with:
-          component: true
+          start: pnpm run dev
+          wait-on: 'http://localhost:5173'
 
       - name: Build
         run: pnpm run build

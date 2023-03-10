@@ -7,4 +7,7 @@ export default defineConfig({
       bundler: 'vite',
     },
   },
+  e2e: {
+    baseUrl: 'http://localhost:5173',
+  },
 });
