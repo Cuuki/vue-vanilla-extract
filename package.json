@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write \"**/*.{cjs,ts,vue,css,html}\"",
     "lint": "eslint .",
@@ -30,6 +30,7 @@
     "prettier": "^2.8.4",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
+    "vite-plugin-checker": "^0.5.6",
     "vue-tsc": "^1.0.24"
   },
   "engines": {
